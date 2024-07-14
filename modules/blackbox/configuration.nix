@@ -5,7 +5,12 @@
     [ 
       ./hardware-configuration.nix
       ../common/common_pkgs.nix
+      ./gaming.nix
     ];
+
+  hardware.opengl = {
+	enable = true;
+  };
 
   # Bootloader.
   boot.loader = {
@@ -47,6 +52,11 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+	modesetting.enable = true;
+	nvidiaSettings = true;
+  };
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
