@@ -5,6 +5,10 @@
 	stateVersion,
 	...
 }: {
+	imports = [
+		../neovim.nix
+	];
+
 	nixpkgs = {
 		config = {
 			allowUnfree = true;

@@ -14,6 +14,14 @@
 		fzf
 		git
 		eza
+		wl-clipboard
+		(firefox.overrideAttrs (old: {
+			buildCommand =
+				old.buildCommand
+				+ ''
+					substituteInPlace $out/bin/firefox --replace "exec -a" "MOZ_ENABLE_WAYLAND=0 exec -a"
+				'';
+		}))
 	];
 	programs.nh = {
 		enable = true;

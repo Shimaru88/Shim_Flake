@@ -56,6 +56,7 @@
   hardware.nvidia = {
 	modesetting.enable = true;
 	nvidiaSettings = true;
+	package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
   # Enable the GNOME Desktop Environment.
@@ -92,7 +93,6 @@
     ];
   };
 
-  programs.firefox.enable = true;
   programs.git.enable = true;
   programs.zsh.enable = true;
   hardware.ckb-next.enable = true;

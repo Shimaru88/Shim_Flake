@@ -1,4 +1,4 @@
-{ pkgs, ... }
+{ pkgs, ... }:
 
 {
 	programs.steam.enable = true;
@@ -15,4 +15,5 @@
 		vulkan-tools
 
 		#Extra dependencies		
+	];
 }
