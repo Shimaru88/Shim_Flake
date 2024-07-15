@@ -3,6 +3,7 @@
 	environment.systemPackages = with pkgs; [
 		lua-language-server
 		kitty
+		kitty-themes
 		neovim
 		helix
 		wget
@@ -33,4 +34,8 @@
 		enable = true;
 		alias = "tf";
 	};
+
+	fonts.packages = with pkgs; [
+		(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+	];
 }

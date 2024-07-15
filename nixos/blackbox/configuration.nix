@@ -94,7 +94,6 @@
   };
 
   programs.git.enable = true;
-  programs.zsh.enable = true;
   hardware.ckb-next.enable = true;
   users.defaultUserShell = pkgs.zsh;
 

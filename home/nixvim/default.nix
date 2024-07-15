@@ -1,7 +1,9 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports = [];
+  imports = [
+    ./plugins
+  ];
 
   programs.nixvim = {
     enable = true;
@@ -19,8 +21,6 @@
     globals = {
       mapleader = " ";
       maplocalleader = " ";
-
-      have_nerd_font = true;
     };
 
     opts = {
@@ -73,7 +73,7 @@
     };
 
     extraPlugins = with pkgs.vimPlugins; [
-      
+      nvim-web-devicons      
     ];
 
     extraConfigLuaPre = ''
