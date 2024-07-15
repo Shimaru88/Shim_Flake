@@ -6,7 +6,8 @@
 	...
 }: {
 	imports = [
-		../neovim.nix
+    #../neovim.nix
+    ../nixvim
 	];
 
 	nixpkgs = {
@@ -20,7 +21,7 @@
 	programs.home-manager.enable = true;
 	home.packages = with pkgs; [
 
-	]
+	];
 
 	programs.git = {
 		enable = true;
