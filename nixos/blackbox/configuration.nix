@@ -85,15 +85,13 @@
     pulse.enable = true;
   };
 
-  users.users.shimaru = {
-    isNormalUser = true;
-    description = "Shimaru";
+  users.users."${username}" = {
+    description = "${username}";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    ];
   };
 
   programs.git.enable = true;
+  programs.zsh.enable = true;
   hardware.ckb-next.enable = true;
   users.defaultUserShell = pkgs.zsh;
 

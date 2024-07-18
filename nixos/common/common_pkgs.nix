@@ -38,4 +38,19 @@
 	fonts.packages = with pkgs; [
 		(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 	];
+  
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = ["*"];
+        settings = {
+          main = {
+            capslock = "overload(meta, esc)";
+            esc = "overload(esc, capslock)";
+          };
+        };
+      };
+    };
+  }; 
 }
