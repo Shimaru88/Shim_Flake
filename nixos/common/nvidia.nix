@@ -1,16 +1,14 @@
-{ config, ... }:
+{config, ...}: {
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+  };
 
-{
-	hardware.opengl = {
-		enable = true;
-		driSupport32Bit = true;
-	};
-
-	services.xserver.videoDrivers = [ "nvidia" ];
-	hardware.nvidia = {
-		modesetting.enable = true;
-		open = false;
-		nvidiaSettings = true;
-		package = config.boot.kernelPackages.nvidiaPackages.stable;
-	};
+  services.xserver.videoDrivers = ["nvidia"];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
 }

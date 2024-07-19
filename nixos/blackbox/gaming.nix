@@ -1,19 +1,17 @@
-{ pkgs, ... }:
+{pkgs, ...}: {
+  programs.steam.enable = true;
 
-{
-	programs.steam.enable = true;
+  environment.systemPackages = with pkgs; [
+    #Steam
+    mangohud
+    gamemode
 
-	environment.systemPackages = with pkgs; [
-#Steam
-		mangohud
-			gamemode
+    #Wine
+    wine
+    winetricks
+    protontricks
+    vulkan-tools
 
-#Wine
-			wine
-			winetricks
-			protontricks
-			vulkan-tools
-
-#Extra dependencies		
-	];
+    #Extra dependencies
+  ];
 }

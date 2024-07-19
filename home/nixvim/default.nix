@@ -1,6 +1,4 @@
-{ config, pkgs, inputs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./plugins
   ];
@@ -56,13 +54,18 @@
     keymaps = [
       {
         mode = "n";
-        key  = "<Esc>";
+        key = "<Esc>";
         action = "<cmd>nohlsearch<CR>";
       }
       {
         mode = "n";
         key = "-";
         action = "<CMD>Oil<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>fm";
+        action = "<CMD>lua vim.lsp.buf.format()<CR>";
       }
     ];
 
@@ -82,7 +85,7 @@
     };
 
     extraPlugins = with pkgs.vimPlugins; [
-      nvim-web-devicons      
+      nvim-web-devicons
     ];
 
     extraConfigLuaPre = ''

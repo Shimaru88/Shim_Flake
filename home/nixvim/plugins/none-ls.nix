@@ -1,10 +1,13 @@
-{ config, pkgs, inputs, ... }:
-
-{
+{...}: {
   programs.nixvim = {
-    plugins.none-lsp = {
+    plugins.none-ls = {
       enable = true;
-      enableLspFormat = true;
+
+      sources = {
+        formatting = {
+          alejandra.enable = true;
+        };
+      };
     };
   };
 }

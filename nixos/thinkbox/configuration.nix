@@ -1,30 +1,33 @@
-{ config, pkgs, hostname, username, stateVersion, ... }:
-
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-      ../common/common_pkgs.nix
-    ];
+  pkgs,
+  hostname,
+  username,
+  stateVersion,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
+    ../common/common_pkgs.nix
+  ];
 
   # Bootloader.
   boot.loader = {
-  	systemd-boot.enable = true;
-  	efi.canTouchEfiVariables = true;
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
   };
 
   nix = {
-	settings = {
-		auto-optimise-store = true;
-		experimental-features = [ "nix-command" "flakes" ];
-		trusted-users = [ "root" "@wheel" ];
-	};
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = ["nix-command" "flakes"];
+      trusted-users = ["root" "@wheel"];
+    };
   };
 
   # Enable networking
   networking = {
-  	networkmanager.enable = true;
-	hostName = "${hostname}";
+    networkmanager.enable = true;
+    hostName = "${hostname}";
   };
 
   # Set your time zone.
@@ -77,7 +80,7 @@
   users.users."${username}" = {
     isNormalUser = true;
     description = "${username}";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
     ];
   };
@@ -89,5 +92,5 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
- system.stateVersion = "${stateVersion}";
+  system.stateVersion = "${stateVersion}";
 }
