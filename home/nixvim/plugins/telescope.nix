@@ -15,7 +15,7 @@
 	  mode = "n";
 	  action = "help_tags";
 	  options = {
-	    desc = "[S]earch [H]elp";
+	    desc = "[F]ind [H]elp";
 	  };
 	};
 	"<leader>fk" = {

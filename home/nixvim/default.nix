@@ -55,6 +55,11 @@
         key  = "<Esc>";
         action = "<cmd>nohlsearch<CR>";
       }
+      {
+        mode = "n";
+        key = "-";
+        action = "<CMD>Oil<CR>";
+      }
     ];
 
     plugins = {
