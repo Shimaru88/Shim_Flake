@@ -7,5 +7,6 @@
     ./oil.nix
     ./nvim-cmp.nix
     ./telescope.nix
+    ./conform.nix
   ];
 }

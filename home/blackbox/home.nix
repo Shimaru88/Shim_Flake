@@ -6,7 +6,6 @@
 	...
 }: {
 	imports = [
-    #../neovim.nix
     ../nixvim
     ../common/zsh.nix
 	];

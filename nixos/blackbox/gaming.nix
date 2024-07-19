@@ -2,18 +2,18 @@
 
 {
 	programs.steam.enable = true;
-	
+
 	environment.systemPackages = with pkgs; [
-		#Steam
+#Steam
 		mangohud
-		gamemode
+			gamemode
 
-		#Wine
-		wine
-		winetricks
-		protontricks
-		vulkan-tools
+#Wine
+			wine
+			winetricks
+			protontricks
+			vulkan-tools
 
-		#Extra dependencies		
+#Extra dependencies		
 	];
 }

@@ -47,6 +47,10 @@
       scrolloff = 10;
 
       hlsearch = true;
+
+      tabstop = 2;
+      softtabstop = 2;
+      showtabline = 2;
     };
 
     keymaps = [
