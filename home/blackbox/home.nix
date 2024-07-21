@@ -8,6 +8,10 @@
   imports = [
     ../nixvim
     ../common/zsh.nix
+    ../common/eza.nix
+    ../common/git.nix
+    ../common/kitty.nix
+    ../common/tmux.nix
   ];
 
   nixpkgs = {
@@ -20,14 +24,12 @@
   home.stateVersion = "${stateVersion}";
   programs.home-manager.enable = true;
   home.packages = with pkgs; [
-    git
     gcc
     unzip
     wget
     curl
     ripgrep
     fd
-    fzf
 
     nil
     lua-language-server
@@ -35,34 +37,8 @@
     alejandra
   ];
 
-  programs.git = {
-    enable = true;
-    userName = "Shimaru88";
-    userEmail = "${email}";
-  };
-  programs.fzf = {
+ programs.fzf = {
     enable = true;
     enableZshIntegration = true;
-  };
-  programs.eza = {
-    enable = true;
-    git = true;
-    icons = true;
-    extraOptions = [
-      "--group-directories-first"
-      "--header"
-      "-o"
-      "--no-permissions"
-      "--hyperlink"
-    ];
-  };
-  programs.kitty = {
-    enable = true;
-    font = {
-      name = "JetBrainsMono Nerd Font Mono";
-      size = 14;
-    };
-    shellIntegration.enableZshIntegration = true;
-    theme = "Monokai Soda";
   };
 }

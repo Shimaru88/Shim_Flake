@@ -39,6 +39,7 @@
   services.xserver.xkb = {
     layout = "se";
     variant = "";
+    options = "Caps_Lock=Escape";
   };
 
   # Configure console keymap

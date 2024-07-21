@@ -60,7 +60,7 @@
       {
         mode = "n";
         key = "-";
-        action = "<CMD>Oil<CR>";
+        action = "<CMD>Oil --float<CR>";
       }
       {
         mode = "n";
